@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Schema</title>
+
+</head>
+<body>
+<p>Lorsqu'on interroge la communauté des développeurs Wordpress, nombre d'entre eux ont déjà entendu parler des données
+    structurées de Schema.org mais bien peu d'entrre eux les appliquent à leurs projets. Pourtant les bénéfices des
+    données structurées sur le référencemen sont nombreux.<br>Petit tour de présentationpuis chammp d'application à
+    Wordpress.</p>
+<p>Si vous n'êtes familier ni des données structurées ni de Schema.org, sachez que les données structurées sont des
+    balises HTML qui aident les moteurs de recherche (Google, je pointe le doigt vers toi) à comprendre le contenu d'une
+    page. Ainsi ils pourront la remonter plus efficacement dans les résultats des requêtes.</p>
+<p>Cet article va faire un point détaillé sur les données structurées de Schema.orgh puis vous proposer un champ
+    d'application à l'environnement Wordpress.</p>
+<h2>Tour de présentation de Schema.org</h2>
+<p>Schema.org recense un vocabulaire d'attributs et de valeurs HTML qui décrivent le contenu d'une page web.<br>Le
+    concept de ce vocabulaire est né d'une collaboration entre Microsoft, Google, Yahoo et Yandex. Depuis, des membres
+    de la 3WC sont devenus à leur tour soutenir le projet. Si vous êtes curieux, vous pouvez voir l'activité de cette
+    communauté et vous connecter à ses membres via la page de la communauté.</p>
+<p>traddddddd****</p>
+<h2>Formats des données structurées</h2>
+<p>Il en existe 3, Google privilégie le premier : JSON-LD, Microdata et RDFa.<br>Les deux premiers sont les deux formats
+    les plus largement utilisés.</p>
+<p>Illustrons la différence entre les formats JSON-LD et Microdata avec une page web où l'internaute recherche des
+    informations pratiques sur liste de boutiques locales.<br>Chaque boutique pourra présenter son nom, son adresse, son
+    type d'activité et ses heures d'ouverture.</p>
+<p>Le ********** resultat ressemblera à cela********</p>
+<p>****code*****</p>
+<p>Voici comment on utilisera Micordata pur renseigner les horaires d'ouverture.</p>
+<p>****code****</p>
+<p>La même information, au format JSON-LD cette fois :</p>
+<p>****code*****</p>
+<h2>Comment lesdonnées structurées de Schema.org impactent le référencement SEO.</h2>
+<p>Ce qui nous intéresse ici est d'aider les moteutrs de recherche à mieux comprendre le contenu d'une page web et, par
+    conséquent, à mieux la remonter dans les résultats pertinents d'une requête.</p>
+<p>John Mueller de chez Google a participé en 2015 à un tchat video où il a indiqué très clairement l'importance à venir
+    des données structurées dans le domaine de l'optimisation SEO.<br>Le fait que Shema.org soit fondé et soutenu par
+    des géants du Web conforte, si nous voulons contribuer à un Page Rank et une Indexation de nos pages corrects, qu'il
+    faut inclure les données structurées à notre stratégie SEO.</p>
+<p>Prenons un exemple. Un internaute recherche des "Places de concert pour Francis Cabrel". Google va lui retourner une
+    liste de résultats et il y a fort à parier que les liens qui seront alors cliqués, même s'ils ne sont pas en tête de
+    résultats, seront ceux qui offrent les informations les plus utiles. </p>
+<h2>Quel format de données structurées choisir ?</h2>
+<p><a href="https://developers.google.com/search/docs/guides/intro-structured-data">La documentation officielle de
+    Google sur les données structurées</a> fait la part belle au format JSON-LD. Nous tenons donc là une piste à
+    privilégier. Google fournit même un <a href="https://www.google.com/webmasters/markup-helper/u/0/">Webmasters
+        Tool</a> qui génère les données au format JSON-LD, un outil qui peut être votre barrière d'entrée la plus
+    accessible si vous débutez avec les données structurées.</p>
+<h2>Connaître les données qui peuvent être structurées</h2>
+<p>Le <a href="https://developers.google.com/search/docs/guides/search-features">guide de Google sur les données
+    structurées</a> offre la ressource la plus exhaustive et la plus compréhensible.</p>
+<p>La ligne de base par laquelle Schema veut catégoriser le contenu est le "type" de données et voici les types que
+    Google reconnaît actuellement:</p>
+<ul>
+    <li>Articles</li>
+    <li>Books (livres)</li>
+    <li>Courses (cours, formation)</li>
+    <li>Datasets (ensembles de données)</li>
+    <li>Events (événements)</li>
+    <li>Fact Check</li>
+    <li>Job Postings (offres d'emploi)</li>
+    <li>Local Businesses (entreprises locales)</li>
+    <li>Music (musique)</li>
+    <li>Podcasts</li>
+    <li>Products (produits)</li>
+    <li>Recipes (recettes de cuisine)</li>
+    <li>Reviews (critiques, analyses)</li>
+    <li>TV &amp; Movies (Films et télévision)</li>
+    <li>Videos</li>
+</ul>
+<p>En complément, Google cherche aussi des données structurées dans ce qui améliore l'expérience utilisateur:</p>
+<ul>
+    <li>Fil d'Ariane (Breadcrumb)</li>
+    <li>Barre de recherche dans le site</li>
+    <li>Informations de contact de la société</li>
+    <li>Logos</li>
+    <li>Liens vers les pages de Réseaux sociaux</li>
+    <li>Carousels</li>
+</ul>
+<p>Maintenant que les présentations avec Schema.org ont été faites, passons à l'ajout de données structurées dans un
+    projet Wordpress.</p>
+<h2>Ajouter les données structurées de Schema.org à votre Wordpress</h2>
+<p>Pour cette démonstration nous allons utiliser comme extension Wordpress le plugin <a
+        href="https://www.advancedcustomfields.com/">Advanced Custom Fields</a> (ACF). Il nous permettra au final de
+    générer les données structurées dans un format JSON-LD valide.</p>
+<p>Certains lecterus seront tentés de demander pourquoi ne pas utiliser plutôt un plugin populaire comme <a
+        href="https://wordpress.org/plugins/wordpress-seo/">Yoast</a> ou <a
+        href="https://wordpress.org/plugins/schema/">Schema</a>. En fait, il existe des tonnes d'extensions qui aident à
+    structurer les données sous Wordpress.<br>Je vous laisse vous faire votre propre opinion mais à titre personnel je
+    recherche une extension qui permet de manipuler les données structurées avec un niveau de personnalisation assez
+    poussé pour pouvoir manipuler notamment des données comme les heures d'ouverture et les informations de contact
+    d'une entreprise locale.</p>
+<p>Avec ACF nous avons non seulement la possibilité de créer les champs exactement voulus pour la saisie des valeurs que
+    nous déisrons mais nous pouvons en plus le faire dynamiquement comme une donnée courante de notre site
+    Wordpress.</p>
+<p>Voici à quoi cela va ressembler à l'arrivée :</p>
+<p>image********</p>
+<p>Je mets à disposition un repertoire sur Github avec les exemples de cet article que vous pourrez utiliser comme point
+    de départou simplement pour suivre tout du long les étapes successives.</p>
+<p>***button github download****</p>
+<h2>#Etape 1 : Créer la page Wordpress avec Options personnalisées.</h2>
+<p>Installer une page Admin personnalisée dans Wordpress peut se faire directement dans le fichier
+    <code>functions.php</code> : </p>
+<p>*****code****</p>
+<p>Cette brique de code nous donne un nouveau lien dans la navigation Wordpress appelé General Options, mais seulement
+    après le hook up dans ACF avec l'étape suivante.</p>
+<h2>#Etape 2 : Créer les champs personnalisés (custom fields)</h2>
+<p>A ce stade, notre page General Options est encore vide. Avec l'extension ACF installée et activée, nous allons nous
+    rendre sur la page et y installer les champs à saisir désirés et y stocker notre donnée structurée.</p>
+<p>Voici comment nos champs personnalisés (custom fields) vont être organisés :</p>
+<ul>
+    <li>Logo de l'entreprise</li>
+    <li>Adresse de l'entreprise</li>
+    <li>Horaires d'ouverture</li>
+    <li>Jours de fermeture</li>
+    <li>Informations de contact</li>
+    <li>Liens vers les réseaux sociaux</li>
+    <li>Type de donnée structurée</li>
+</ul>
+<p>Il y a ici un bon nombre de champs mais vous pouvez utiliser le fichier <code>acf-export.json</code> proposé sur mon
+    répertoire Github pour importer les champs dans ACF plutôt que les créer par vous-même. Notez que certains champs
+    utilisent ici la <a href="https://www.advancedcustomfields.com/add-ons/repeater-field/">fonctionnalité Repeater</a>
+    qui est actuellement supportée dans la version payante d'ACF.</p>
+<h2>#Etape 3 : Lier les champs personnalisés à la page General Options</h2>
+<p>Maintenant que nous avons les champs personnalisés reliés à ACF, notre tâche suivante est de les "mapper" dans notre
+    page General Options. C'est ici que les champs personnalisés vont être créés.bACF propose des réglages suffisamment
+    fins pour chaque groupe de champs personnalisés en fonction des champs à afficher ou non sur certaines pages
+    spécifiques.</p>
+<p>***extrait à faire aussi ?***</p>
+<p>Voilà ! Notre page Genral Options dispose à présent d'options que nous pouvons gérer.</p>
+<h2>#Etape 4 : Saisir les données</h2>
+<p>Nous avons bien préparé le terrain, saisons à présent les fameuses données structurées que Google apprécie tant.</p>
+<ul>
+    <li><b>Logo de l'entreprise :</b> Google spécifie que la taille idéale est un carré de <code>151px<code> de côté.
+        Google utilisera cette image s'il affiche les informations de l'entreprise sur la droite de la page de ses
+        résultats. Vous pouvez en voir un exemple en cherchant une entreprise bien connue, <a
+                href="https://www.google.fr/search?q=google&oq=google&gs_l=psy-ab.3..0i67k1j0j0i131k1j0i67k1.94440.95172.0.95287.6.6.0.0.0.0.97.435.5.5.0....0...1.1.64.psy-ab..1.5.434.stDCfFOB2Zc">comme
+            Google par exemple</a>.</li>
+    <li><b>Photo de l'entreprise locale :</b> Là aussi cela peut améliorer l'affichage dans la partie droite des
+        résultats d'une recherche dans Google. Cela peut aussi améliorer les résultats dans une recherche sur Maps.
+        Google recommande une image carrée de <code>200px</code>.
+    </li>
+    <li><b>Type de donnée structurée :</b> Sélectionnez le type de contenu dans ceux identifiés par Google. Ici il
+        s'agira de "local business".
+    </li>
+    <li><b>Adresse de l'entreprise :</b> Là aussi ce sera utilisé sur la partie qui présente l'entreprise dans les
+        résultats de recherche que dans Maps.
+    </li>
+    <li><b>Horaires d'ouverture :</b> Les spécifications popur les heures d'ouverture peuvent être consultées sur <a
+            href="http://schema.org/OpeningHoursSpecification"></a> le site de Schema.org</a>. La façon dont nous
+        renseignons ici le champs utilise la fonction Repeater de la version payante d'ACF pour spécifier les jours
+        d'ouverture, les heures d'ouverture et de fermeture et pour basculer entre ouverture et fermeture selon l'heure.
+        Cela devrait courvir nos besoins, si l'on en croit la documentation de Schema.org.
+    </li>
+    <li><b>Jours de fermeture spéciale :</b> cela indiquera les jours spéciaux de fermeture. C'est l'avantage "cool"
+        d'ACF pour rendre service aux internautes qui feront leur recheche lors d'un jour férié.
+    </li>
+    <li>Informations de contact</li>
+    <li><b>Liens vers les réseaux sociaux :</b> Il y a tout un pannel de réglages possibles pour <a
+            href="https://developers.google.com/search/docs/data-types/corporate-contacts">les informations de
+        contact</a>.****à finir***
+    </li>
+    <li>Type de donnée structurée</li>
+</ul>
+</body>
+</html>
